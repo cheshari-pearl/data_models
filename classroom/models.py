@@ -1,6 +1,8 @@
 from django.db import models
+from teacher.models import Teacher
+from student.models import Student
 
-class Classs(models.Model):
+class Classroom(models.Model):
     class_name = models.CharField(max_length=20)
     class_capacity = models.PositiveSmallIntegerField()
     class_duration = models.TimeField()
@@ -11,3 +13,9 @@ class Classs(models.Model):
     tables_numbers = models.PositiveSmallIntegerField()
     tv_numbers = models.PositiveSmallIntegerField()
     class_code = models.PositiveSmallIntegerField()
+  
+
+    first_name = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    first_name = models.OneToOneField(Student,on_delete=models.CASCADE)
+
+    period_title = models.ForeignKey('classperiod.ClassPeriod', on_delete=models.CASCADE, related_name='period_name', default=2)

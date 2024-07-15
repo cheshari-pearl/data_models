@@ -12,3 +12,7 @@ class Student(models.Model):
     next_of_kin = models.CharField(max_length=20)
     bio = models.TextField()
     pic = models.ImageField()
+    course_title = models.CharField(max_length=20)
+
+    course_title = models.ManyToManyField('course.Course', related_name='students')
+

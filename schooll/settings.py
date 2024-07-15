@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'teacher',
     'student',
     'course',
-    'class',
+    'classroom',
+    'classperiod',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -78,9 +80,13 @@ WSGI_APPLICATION = 'schooll.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "schooldatabase",
+        "USER": "school_head",
+        "PASSWORD": "mypassword",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 

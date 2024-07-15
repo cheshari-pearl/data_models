@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Teacher(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
@@ -12,3 +13,5 @@ class Teacher(models.Model):
     gender = models.CharField(max_length=10)
     bio = models.TextField
     pic = models.ImageField()
+    
+    pass
