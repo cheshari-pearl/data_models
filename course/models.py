@@ -1,4 +1,6 @@
 from django.db import models
+from student.models import Student
+from teacher.models import Teacher
 
 class Course(models.Model):
     course_title = models.CharField(max_length=20)
@@ -10,8 +12,7 @@ class Course(models.Model):
     course_materials = models.TextField()
     course_attendees = models.PositiveSmallIntegerField()
     course_fee = models.CharField(max_length=20)
-    name = models.CharField(max_length=20)
-
-    name = models.ForeignKey('student.Student', on_delete=models.CASCADE, related_name='courses' , default='default_first_name')
-    first_name = models.OneToOneField('teacher.Teacher', on_delete=models.CASCADE, related_name='course')
-    
+    first_name = models.ForeignKey(Student,on_delete=models.CASCADE, default=2)
+    first_name=models.ForeignKey(Teacher,on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.course_title} {self.course_description}"
