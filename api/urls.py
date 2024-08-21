@@ -9,6 +9,7 @@ from .views import TeacherDetailView
 from .views import CourseDetailView
 from .views import ClassroomDetailView
 from .views import ClassPeriodDetailView
+# from .views import TimetableListView
 
 
 urlpatterns = [
@@ -21,5 +22,7 @@ path("student/<int:id>/", StudentDetailView.as_view(), name="student_detail_view
 path("teacher/<int:id>/", TeacherDetailView.as_view(), name="teacher"),
 path("course/<int:id>/", CourseDetailView.as_view(), name="course"),
 path("classroom/<int:id>/", ClassroomDetailView.as_view(), name="classroom"),
-path("period/<int:id>/", ClassPeriodDetailView.as_view(), name="period")
+path("period/<int:id>/", ClassPeriodDetailView.as_view(), name="period"),
+# path("timetables/", TimetableListView.as_view(), name="timetable_list_view"),
+
 ]
